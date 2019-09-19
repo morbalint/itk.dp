@@ -11,7 +11,7 @@ public class SomeClassWithData
     {
         m_data.add(in);
     }
-    public Collection get_data()
+    Collection get_data()
     {
         return m_data;
     }
