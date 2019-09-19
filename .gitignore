@@ -24,3 +24,5 @@ hs_err_pid*
 
 .idea/
 out/
+
+lab2/Lab2/Lab2_Iterator/.DS_Store
