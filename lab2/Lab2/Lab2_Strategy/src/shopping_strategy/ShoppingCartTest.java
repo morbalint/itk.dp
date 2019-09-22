@@ -9,8 +9,15 @@ public class ShoppingCartTest {
 		
 		cart.addItem(item1);
 		cart.addItem(item2);
-		
-		//pay by paypal: user "myemail@example.com", password: mypwd
-		//pay by credit card: name "Kiss Pista", number "1234567890123456", ccv "786", expiry "12/16"
+
+		PaymentStrategy pp = PaymentFactory.createPaypalStrategy("myemail@example.com", "mypwd");
+		cart.pay(pp);
+
+		PaymentStrategy cc = PaymentFactory.createCreditCardStrategy(
+				"Kiss Pista",
+				"1234567890123456",
+				"786",
+				"12/16");
+		cart.pay(cc);
 	}
 }
