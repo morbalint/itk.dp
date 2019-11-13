@@ -1,24 +1,22 @@
 package hu.ppke.itk.dp.lab8.hw;
 
-import java.util.List;
-
 public class PizzaWithTopping implements Pizza {
 
-    private final PizzaBase base;
-    private final List<Topping> toppings;
+    private final Pizza base;
+    private final Topping topping;
 
-    public PizzaWithTopping(PizzaBase base, List<Topping> toppings){
+    public PizzaWithTopping(Pizza base, Topping topping){
         this.base = base;
-        this.toppings = toppings;
+        this.topping = topping;
     }
 
     @Override
     public String getDescription() {
-        return base.getDescription() + " with: " + toppings.stream().map(x -> x.description).reduce((x,y) -> x + ", " + y).get();
+        return base.getDescription() + " with: " + topping.description;
     }
 
     @Override
     public Double getPrice() {
-        return base.getPrice() + toppings.stream().map(x -> x.price).reduce(0.0, (a,b) -> a+b);
+        return base.getPrice() + topping.price;
     }
 }

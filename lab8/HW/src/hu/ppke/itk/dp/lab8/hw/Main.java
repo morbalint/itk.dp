@@ -24,10 +24,10 @@ public class Main {
         Topping prosciutto = new Topping("prosciutto", 130.0);
 
         Pizza[] pizzas = new Pizza[] {
-                new SizedPizzaWithTopping(neapolitan, large, List.of(tomato, basil, prosciutto)),
+                new PizzaWithTopping(new PizzaWithTopping(new PizzaWithTopping(new PizzaWithSize(neapolitan, large), tomato), basil), prosciutto),
                 new PizzaWithSize(deepDish, small),
-                new PizzaWithTopping(NY, List.of(garlic, sauce, mozzarella, capri)),
-                new SizedPizzaWithTopping(neapolitan, normal, List.of(tomato, olive, mozzarella, basil)),
+                new PizzaWithTopping(new PizzaWithTopping(new PizzaWithTopping(new PizzaWithTopping(NY, garlic), sauce), mozzarella), capri),
+                new PizzaWithTopping(new PizzaWithTopping(new PizzaWithTopping(new PizzaWithTopping(new PizzaWithSize(neapolitan, normal), tomato), olive), mozzarella), basil),
         };
 
         System.out.println("Your order is:\n");

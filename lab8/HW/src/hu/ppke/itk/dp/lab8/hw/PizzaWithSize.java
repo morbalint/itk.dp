@@ -2,10 +2,10 @@ package hu.ppke.itk.dp.lab8.hw;
 
 public class PizzaWithSize implements Pizza {
 
-    private final PizzaBase base;
+    private final Pizza base;
     private final PizzaSize size;
 
-    public PizzaWithSize(PizzaBase base, PizzaSize size) {
+    public PizzaWithSize(Pizza base, PizzaSize size) {
         this.base = base;
         this.size = size;
     }
